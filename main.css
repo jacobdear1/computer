@@ -1,16 +1,11 @@
-<<<<<<< HEAD
 .title{
     text-align: center;
     background-color: orange;
     padding-top: 5%;
     padding-bottom: 5%;
-=======
-.navbarObject {
-    width:100%;
 }
 
-a {
-	text-decoration: none;
-	font-weight: bold;
->>>>>>> 168d663177adac4981a4f3d7c4452d3b332f1a30
+.navbarObject {
+    width:100%;
+    height: 60px;
 }
