@@ -9,3 +9,8 @@
     width:100%;
     height: 60px;
 }
+
+a {
+	text-decoration: none;
+	font-weight: bold;
+}
