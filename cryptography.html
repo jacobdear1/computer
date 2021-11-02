@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8">
         <link rel="icon" type="image/png" href="images/icon.png">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="main.css">
@@ -8,9 +9,118 @@
         <title>Cryptography</title>
     </head>
     <body>
-        <iframe src="navbar.html" class="navbarObject"></iframe>
+        <iframe src="navbar.html" class="navbarObject">If you're seeing this message something went wrong.</iframe>
 
         <h1 class="container-fluid bg-warning p-5 text-dark text-center">Cryptography</h1>
+
+        <div class="mt-5 mb-5 container">
+            <div class="row align-items-center">
+                <div class="col-sm-12 col-md-8">
+                    <h3>What is Cryptography?</h3>
+                    <p>According to <a href="https://www.kaspersky.com/resource-center/definitions/what-is-cryptography" target="_blank">Kaspersky</a>, a world leader in Computer Security, Cryptography can be defined as the study of secure communication techniques - allowing only authorised recipients to view its content.</p>
+                    <p>Although historically the field primarily focused on linguistics and patterns in lexicon, the emergence of the digital age has shifted the definition into one which strongly emphasises Information Theory, Number Theory, Combinatorics, Statistics, and other areas of Mathematics. Cryptography is so vital today since data is routed between computers all across the world, and you wouldn't want the wrong people seeing your private information. This Article aims to give you a glimpse into the wonderful world of <em>Cryptography in Computer Science</em>.</p>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <img class="img-fluid mx-auto d-block" src="images/binary_padlock.png" alt="A padlock in fron of binary digits" width="200" height="200">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-12 col-md-6">
+                    <h3>Symmetric Encryption</h3>
+                    <p><em>Symmetric Encryption</em> uses the <strong>same key</strong> to both encrypt and decrypt data. A vital benefit to Symmetric Encryption is its speed - since the same key is used for both the sender and recipient, time isn't wasted generating multiple keys; plus, keys for Symmetric Encryption are often shorter, meaning the encryption and decryption process takes less time.</p>
+                    <p>Some common uses for Symmetric Encryption can be seen below:</p>
+
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Banking
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                This form of encryption is used for Card Payment to secure Credit Card information as well as Personally Identifiable Information to prevent Fraudelent Charges and Identity Theft
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Data Storage
+                            </button>
+                          </h2>
+                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              If there are some files stored by a user on a shared computer, they may want to prevent other users from seeing its content. Symmetric Encryption is a quick way to keep data anonymous if it is not being transferred to a different computer
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
+                    <br>
+
+                    <h3>Key Exchange</h3>
+                    <p>An essential part of encryption is the key, which is used to decrypt data. But this poses the question: how do you transfer the key to the recipient without any form of encryption (since that encryption in and of itself requires its own key)?</p>
+                    <p>One solution is <em>Diffie-Hellman</em>, as beautifully explained by the YouTube Channel Computerphile:</p>
+
+                    <div class="iframe-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/NmM9HA2MQGI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <h3>Asymmetric Encryption</h3>
+                    <p>Public-Key Encryption, or <em>Asymmetric Encryption</em> is a form of encryption where a <strong>different key</strong> is used for encrypting and decrypting data. There will be two separate keys: A <strong>Public Key</strong> and a <strong>Private Key</strong>. The Public Key will be freely available and can be used by anyone to encrypt data. However, due to some cunning maths, the same key cannot be used to decrypt the data - only the the Private Key can do this.</p>
+                    <p>The algorithm commonly used to generate these keys is called <strong>RSA</strong>, and makes use of <a href="https://en.wikipedia.org/wiki/Euler%27s_totient_function" target="_blank">Euler's Totient Function</a> to prevent the Private Key from being figured out from the Public Key (meaning only the intended recipient will only ever be able to read the private message).</p>
+                    <p>For a more in-depth explanation, watch this <a href="https://www.youtube.com/watch?v=QSlWzKNbKrU" target="_blank">lecture</a> by Ruhr University Bochum.</p>
+                    <p>The main attraction to <em>Asymmetric Encrpytion</em> is its security. Since a different key is used for encryption and decryption, there is no to transfer the key used for decryption - only the Public Key needs to be shared to the sender!</p>
+
+                    <p>Asymmetric Encryption is used in:</p>
+                    <ul>
+                        <li>Key Exchange (see below)</li>
+                        <li>Email Security</li>
+                        <li>Web Security</li>
+                    </ul>
+
+                    <br>
+                    <h3>Cryptographic Methods</h3>
+                    <p>Below are a few cryptographic techniques that may interest you</p>
+
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">SHA- Hashing</h5>
+                              <br>
+                              <p class="card-text">A popular hashing algorithm for making data unreadable - unlike with encryption, after being hashed the data cannot be restored easily</p>
+                              <a href="https://www.thesslstore.com/blog/difference-sha-1-sha-2-sha-256-hash-algorithms/" target="_blank" class="btn btn-primary">Read More</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">AES</h5>
+                              <br>
+                              <p class="card-text">Stands for Advanced Encryption Standard, a very popular form of Symmetric Encryption used on messaging apps such as WhatsApp and Signal</p>
+                              <a href="https://www.comparitech.com/blog/information-security/what-is-aes-encryption/" target="_blank" class="btn btn-primary">Read More</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">MD5</h5>
+                              <br>
+                              <p class="card-text">A previously popular Hashing Algorithm which has now been found to contain many vulnerabilites. It is still used today for finding checksums</p>
+                              <a href="https://searchsecurity.techtarget.com/definition/MD5" target="_blank" class="btn btn-primary">Read More</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
 
         <!--Bootstrap-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
